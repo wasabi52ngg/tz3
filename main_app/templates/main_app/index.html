@@ -3,18 +3,52 @@
 {% block title %}Главная - PROJECT_NAME_PLACEHOLDER{% endblock %}
 
 {% block content %}
-<h1>Добро пожаловать в PROJECT_NAME_PLACEHOLDER</h1>
-<p>Приложение успешно интегрировано с Битрикс24</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1>Добро пожаловать в PROJECT_NAME_PLACEHOLDER</h1>
+            <p>Приложение успешно интегрировано с Битрикс24</p>
 
-{% if user %}
-<h2>Пользователь авторизован</h2>
-<p><strong>ID:</strong> {{ user.id }}</p>
-<p><strong>Имя:</strong> {{ user.name }}</p>
-<p><strong>Email:</strong> {{ user.email }}</p>
-{% endif %}
+            {% if user %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h2 class="mb-0">Пользователь авторизован</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>ID:</strong> {{ user.id }}</p>
+                    <p><strong>Имя:</strong> {{ user.name }}</p>
+                    <p><strong>Email:</strong> {{ user.email }}</p>
+                </div>
+            </div>
+            {% endif %}
 
-<h2>Информация о приложении</h2>
-<p><strong>Домен портала:</strong> {{ app_settings.portal_domain }}</p>
-<p><strong>Домен приложения:</strong> {{ app_settings.app_domain }}</p>
-<p><strong>Название приложения:</strong> {{ app_settings.app_name }}</p>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h2 class="mb-0">Информация о приложении</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>Домен портала:</strong> {{ app_settings.portal_domain }}</p>
+                    <p><strong>Домен приложения:</strong> {{ app_settings.app_domain }}</p>
+                    <p><strong>Название приложения:</strong> {{ app_settings.app_name }}</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">Доступные функции</h2>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2 d-md-block">
+                        <a href="{% url 'main_app:employees_table' %}" class="btn btn-primary btn-lg">
+                            <i class="bi bi-people-fill"></i> Таблица сотрудников
+                        </a>
+                        <p class="mt-2 text-muted">
+                            Просмотр сотрудников с иерархией руководителей и статистикой звонков
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
