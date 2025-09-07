@@ -68,7 +68,6 @@ function showNotification(message, type = 'info') {
     
     messageElement.innerHTML = message;
     
-    // Добавляем классы в зависимости от типа
     const modalContent = document.querySelector('#notificationModal .modal-content');
     modalContent.className = 'modal-content';
     
@@ -99,7 +98,6 @@ function getCookie(name) {
     return cookieValue;
 }
 
-// Добавляем стили для ссылок сотрудников
 document.addEventListener('DOMContentLoaded', function() {
     const employeeLinks = document.querySelectorAll('.employee-link');
     employeeLinks.forEach(link => {
