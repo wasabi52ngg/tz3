@@ -64,7 +64,6 @@ def generate_test_calls(request):
         
         for user in users:
             user_id = int(user['ID'])
-            user_name = f"{user.get('LAST_NAME', '')} {user.get('NAME', '')}".strip()
 
             calls_count = random.randint(1, 4)
             for i in range(calls_count):

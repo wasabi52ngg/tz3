@@ -1,9 +1,5 @@
 // JavaScript для таблицы сотрудников
 
-// Инициализация BX24
-BX24.init(function() {
-    console.log('BX24 SDK инициализирован');
-});
 
 // Функция для открытия профиля сотрудника в слайдере
 function openEmployeeProfile(userId) {
